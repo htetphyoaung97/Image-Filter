@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>image Fliter</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="fliter-start">
+		<div class="fliter-button-gp">
+			<button data-filter="*">All images</button>
+			<button data-filter=".home">Home</button>
+			<button data-filter=".anime">Anime</button>
+			<button data-filter=".nature">Natural</button>
+		</div>
+
+		<div class="images-store">
+			<img src="images/home1.png" alt="home" class="home">
+			<img src="images/home2.png" alt="home" class="home">
+			<img src="images/home3.png" alt="home" class="home">
+			<img src="images/home4.png" alt="home" class="home">
+			<img src="images/home5.png" alt="home" class="home">
+			<img src="images/anime.png" alt="anime" class="anime">
+			<img src="images/anime2.png" alt="anime" class="anime">
+			<img src="images/anime3.png" alt="anime" class="anime">
+			<img src="images/naruto1.png" alt="anime" class="anime">
+			<img src="images/naruto2.png" alt="anime" class="anime">
+			<img src="images/nature.png" alt="nature" class="nature">
+			<img src="images/nature1.png" alt="nature" class="nature">
+			<img src="images/nature2.png" alt="nature" class="nature">
+			<img src="images/nature3.png" alt="nature" class="nature">
+			<img src="images/nature4.png" alt="nature" class="nature">
+		</div>
+	</div>
+
+
+
+	<script src="js/jquery.js"></script>
+	<script src="js/isotope.js"></script>
+
+	<script>
+		$(function(){
+			$(".fliter-button-gp").on('click','button', function(){
+				var filter_value = $(this).attr('data-filter');
+				$(".images-store").isotope({filter:filter_value});
+			});
+		});
+	</script>
+</body>
+</html>
